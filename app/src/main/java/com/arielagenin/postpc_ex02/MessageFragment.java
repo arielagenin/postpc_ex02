@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class message_fragment extends DialogFragment implements View.OnClickListener{
-    private static final String TAG = message_fragment.class.getCanonicalName();
+public class MessageFragment extends DialogFragment implements View.OnClickListener{
+    private static final String TAG = MessageFragment.class.getCanonicalName();
 
     EditText fragmentEditext;
 
@@ -21,11 +21,11 @@ public class message_fragment extends DialogFragment implements View.OnClickList
 
 
 
-    public static message_fragment newInstance(InputMessageToMainActivity mainActivity,String messageThatWasAtMainActivity) {
+    public static MessageFragment newInstance(InputMessageToMainActivity mainActivity, String messageThatWasAtMainActivity) {
 
         Bundle args = new Bundle();
         args.putString("msg",messageThatWasAtMainActivity);
-        message_fragment fragment = new message_fragment();
+        MessageFragment fragment = new MessageFragment();
         fragment.listener = mainActivity;
         fragment.setArguments(args);
         return fragment;
@@ -34,7 +34,7 @@ public class message_fragment extends DialogFragment implements View.OnClickList
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.message_fragmnet_pop_up, container, false);
+        final View view = inflater.inflate(R.layout.message_fragmnet, container, false);
 
         fragmentEditext = view.findViewById(R.id.fragment_editext);
         fragmentEditext.setText(getArguments().getString("msg"));

@@ -5,30 +5,28 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:text="Are you sure you wanna be a beach and delete this message?"
+        android:text="delete this message?"
         android:id="@+id/delete_fragment_message_to_user"/>
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="date usename and message here"
+        android:text="message content and username"
         android:layout_below="@id/delete_fragment_message_to_user"
         android:id="@+id/delete_fragment_message_details"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ok"
-        android:layout_below="@+id/delete_fragment_message_details"
-        android:layout_toEndOf="@id/delete_fragment_message_cancel_button"
-        android:id="@+id/delete_fragment_message_ok_button"/>
+        android:text= "NOOOOOO!!"
+        android:layout_below="@id/delete_fragment_message_details"
+        android:layout_toEndOf="@id/delete_fragment_message_delete_button"
+        android:id="@+id/delete_fragment_message_cancel_button"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text= "Cancel"
-        android:layout_below="@id/delete_fragment_message_details"
-        android:id="@+id/delete_fragment_message_cancel_button"/>
-
-
+        android:text="delete message!"
+        android:layout_below="@+id/delete_fragment_message_details"
+        android:id="@+id/delete_fragment_message_delete_button"/>
 
 </RelativeLayout>

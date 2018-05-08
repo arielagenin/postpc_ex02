@@ -9,8 +9,10 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements message_fragment.InputMessageToMainActivity,MessageAdapter.OnLongClickMessageListener,DeleteFragment.OnLongClickListenerFromDeleteAdapter{
 
+public class MainActivity extends AppCompatActivity implements MessageFragment.InputMessageToMainActivity,MessageAdapter.OnLongClickMessageListener,DeleteFragment.OnLongClickListenerFromDeleteAdapter{
+
+    String userName = "Ariela";
     EditText text;
     ListView messagesListView;
     MessageAdapter messagesAdapter;
@@ -37,20 +39,20 @@ public class MainActivity extends AppCompatActivity implements message_fragment.
     public void sendCLicked(View view) {
         String msgText = text.getText().toString();
         if(!msgText.isEmpty()){
-            addMessageToList(new Message("omer",msgText,new Date()));
+            addMessageToList(new Message(userName,msgText,new Date()));
             text.setText(null);
         }
 
     }
 
-    public void messageFragmentClicked(View view) {
-        message_fragment.newInstance(this,text.getText().toString().trim()).show(getSupportFragmentManager());
+    public void messageContentClicked(View view) {
+        MessageFragment.newInstance(this,text.getText().toString().trim()).show(getSupportFragmentManager());
 
     }
 
     @Override
     public void onSendClickedOnFragment(String messageToSend) {
-        addMessageToList(new Message("omer",messageToSend,new Date()));
+        addMessageToList(new Message(userName,messageToSend,new Date()));
     }
 
 

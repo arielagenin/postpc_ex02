@@ -8,10 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class DeleteFragment extends DialogFragment implements View.OnClickListener{
-    private static final String TAG = message_fragment.class.getCanonicalName();
+    private static final String TAG = MessageFragment.class.getCanonicalName();
 
     OnLongClickListenerFromDeleteAdapter listenerForOkCancelButtons;
     Message toDelete;
@@ -19,7 +18,7 @@ public class DeleteFragment extends DialogFragment implements View.OnClickListen
     public static DeleteFragment newInstance(OnLongClickListenerFromDeleteAdapter listener,Message msgToDelete) {
 
         Bundle args = new Bundle();
-        args.putString("msg",msgToDelete.getMsg());
+        args.putString("msg",msgToDelete.getMessage());
         args.putString("date",msgToDelete.getTime());
         args.putString("username",msgToDelete.getUsername());
         DeleteFragment fragment = new DeleteFragment();
@@ -32,14 +31,14 @@ public class DeleteFragment extends DialogFragment implements View.OnClickListen
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.message_delete, container, false);
+        final View view = inflater.inflate(R.layout.delete_fragment, container, false);
 
 
         TextView msgDetails = view.findViewById(R.id.delete_fragment_message_details);
         msgDetails.setText("date: " + getArguments().getString("date") + "\nmessage: " +getArguments().getString("msg") +
                 "\nsent by: " + getArguments().getString("username") );
-        view.findViewById(R.id.delete_fragment_message_ok_button).setOnClickListener(this);
-        view.findViewById(R.id.delete_fragment_message_cancel_button).setOnClickListener(this);
+        view.findViewById(R.id.delete_fragment_message_delete_button).setOnClickListener(this);
+        view.findViewById(R.id.delete_fragment_message_delete_button).setOnClickListener(this);
         return view;
     }
 
@@ -57,7 +56,7 @@ public class DeleteFragment extends DialogFragment implements View.OnClickListen
             case R.id.delete_fragment_message_cancel_button:
                 dismiss();
                 break;
-            case R.id.delete_fragment_message_ok_button:
+            case R.id.delete_fragment_message_delete_button:
                 handleOkClicked(v);
                 dismiss();
                 break;

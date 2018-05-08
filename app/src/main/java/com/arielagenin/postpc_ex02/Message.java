@@ -2,42 +2,60 @@ package com.arielagenin.postpc_ex02;
 
 
 import java.util.Date;
-import java.util.SimpleTimeZone;
+
 public class Message {
 
     private String username;
-    private String msg;
     private String time;
+    private String message;
 
 
     Message(String username , String msg , Date timeStamp){
         this.username = username;
-        this.msg = msg;
+        this.message = msg;
         this.time = timeStamp.toString();
 
     }
 
+    /**
+     * @return The name of the message writer.
+     */
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public String getTime() {
+    /**
+     * @return The time that the message was sent at.
+     */
+    public String getTime()
+    {
         return time;
     }
 
-    public void setTime(String time) {
+    /**
+     * @return The message content.
+     */
+    public String getMessage()
+    {
+        return message;
+    }
+
+    /**
+     * @param message A String representing a message content.
+     * Sets the given message content to be the current message content.
+     */
+    public void setMessage(String message)
+    {
+        this.message = message;
+    }
+
+
+    /**
+     * @param time A string representing time.
+     * sets the time that the message was sent at to the given time.
+     */
+    public void setTime(String time)
+    {
         this.time = time;
     }
 

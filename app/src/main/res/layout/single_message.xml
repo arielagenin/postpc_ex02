@@ -9,24 +9,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/user_name"
+        android:text="Harry Potter"
         />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/msg_time_stamp"
-        android:layout_below="@id/user_name"
-        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/message_content"
-        android:layout_toEndOf="@id/user_name"
-
+        android:layout_below="@id/time_of_message"
+        android:text="xoxo"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time_of_message"
+        android:layout_below="@id/user_name"
+        android:text="The time is now"
+        />
 
 
 </RelativeLayout>
